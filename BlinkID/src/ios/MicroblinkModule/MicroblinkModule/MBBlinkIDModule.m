@@ -88,6 +88,7 @@ RCT_REMAP_METHOD(scanWithCamera, scanWithCamera:(NSDictionary *)jsonOverlaySetti
             MBOverlayViewController *overlayVC = [[MBOverlaySettingsSerializers sharedInstance] createOverlayViewController:jsonOverlaySettings recognizerCollection:self.recognizerCollection delegate:self];
 
             UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
+            [recognizerRunnerViewController setModalPresentationStyle:UIModalPresentationFullScreen];
             self.scanningViewController = recognizerRunnerViewController;
 
             UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
